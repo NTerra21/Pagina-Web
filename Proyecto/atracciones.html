@@ -1,51 +1,128 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <!-- Configuración básica del documento -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Parque Aventura</title>
+  <title>Parque Aventura - Atracciones</title>
 
-  <!-- Tipografías de Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Quicksand&display=swap" rel="stylesheet">
-
-  <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-
-  <!-- FontAwesome para íconos -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-  <!-- Estilos personalizados -->
-  <link rel="stylesheet" href="estilos.css">
-  <link rel="icon" href="img/logo_parque_aventura_sin_fondo.png" type="image/png">
-  <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
-
-
+  <link rel="stylesheet" href="../estilos.css">
+  <link rel="icon" href="../img/logo_parque_aventura_sin_fondo.png" type="image/png">
 </head>
 <body>
- 
- 
- <!-- ENCABEZADO CON NAVBAR -->
-  <header>
-    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #0d4f36;">
-      <div class="container">
-        <a class="navbar-brand d-flex align-items-center" href="index.html">
-          <img src="img\logo_parque_aventura_sin_fondo.png" alt="Logo Parque Aventura">
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item"><a class="nav-link" href="Proyecto\inicio.html">Inicio</a></li>
-            <li class="nav-item"><a class="nav-link active" href="Proyecto\atracciones.html">Atracciones</a></li>
-            <li class="nav-item"><a class="nav-link" href="Proyecto\entradas.html">Entradas</a></li>
-            <li class="nav-item"><a class="nav-link" href="Proyecto\eventos.html">Eventos</a></li>
-            <li class="nav-item"><a class="nav-link" href="Proyecto\como_llegar.html">Cómo llegar</a></li>
-            <li class="nav-item"><a class="nav-link" href="Proyecto\comunidad.html">Comunidad</a></li>
-            <li class="nav-item"><a class="nav-link" href="Proyecto\contacto.html">Contacto</a></li>
-          </ul>
-        </div>
+
+<header>
+  <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #0d4f36;">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="../index.html">
+        <img src="../img/logo_parque_aventura_sin_fondo.png" alt="Logo Parque Aventura">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="inicio.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link active" href="atracciones.html">Atracciones</a></li>
+          <li class="nav-item"><a class="nav-link" href="entradas.html">Entradas</a></li>
+          <li class="nav-item"><a class="nav-link" href="eventos.html">Eventos</a></li>
+          <li class="nav-item"><a class="nav-link" href="como_llegar.html">Cómo llegar</a></li>
+          <li class="nav-item"><a class="nav-link" href="comunidad.html">Comunidad</a></li>
+          <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+        </ul>
       </div>
-    </nav>
-  </header>
+    </div>
+  </nav>
+</header>
+
+<main class="container py-5">
+  <h2 class="text-center mb-4">Nuestras Atracciones</h2>
+  <p class="text-center">Parque Aventura cuenta con experiencias para todos los gustos: adrenalina, naturaleza, diversión familiar y juegos interactivos.</p>
+
+  <div class="table-responsive mt-4">
+    <table class="table table-bordered table-striped text-center align-middle">
+      <thead class="table-success">
+        <tr>
+          <th>Atracción</th>
+          <th>Zona</th>
+          <th>Descripción</th>
+          <th>Fila (Pase Simple)</th>
+          <th>Fila (Fast Pass)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Splash Caribe</td>
+          <td>Río</td>
+          <td>Parque acuático con toboganes gigantes y piscinas para toda la familia.</td>
+          <td>45-60 min</td>
+          <td>10-15 min</td>
+        </tr>
+        <tr>
+          <td>Sky Master</td>
+          <td>Cielo</td>
+          <td>Atracción aérea panorámica con vista de todo el parque.</td>
+          <td>25-35 min</td>
+          <td>5-10 min</td>
+        </tr>
+        <tr>
+          <td>Disco</td>
+          <td>Desierto</td>
+          <td>Plataforma giratoria de alta velocidad. Requiere buen equilibrio.</td>
+          <td>30-40 min</td>
+          <td>10 min</td>
+        </tr>
+        <tr>
+          <td>Tornado Río</td>
+          <td>Río</td>
+          <td>Balsa circular que recorre rápidos artificiales con giros bruscos.</td>
+          <td>40-50 min</td>
+          <td>10-15 min</td>
+        </tr>
+        <tr>
+          <td>Conchas Locas</td>
+          <td>Selva</td>
+          <td>Montaña rusa familiar con curvas suaves y decorados tropicales.</td>
+          <td>20-30 min</td>
+          <td>5-10 min</td>
+        </tr>
+        <tr>
+          <td>Sueños con Té</td>
+          <td>Zona infantil</td>
+          <td>Tazas giratorias para los más chicos. Ideal en familia.</td>
+          <td>10-20 min</td>
+          <td>5 min</td>
+        </tr>
+        <tr>
+          <td>La Finca de Don Chanchito</td>
+          <td>Zona granja</td>
+          <td>Mini zoológico con animales de granja y zonas interactivas.</td>
+          <td>Sin espera</td>
+          <td>Sin espera</td>
+        </tr>
+        <tr>
+          <td>Zona de Destreza</td>
+          <td>Montaña</td>
+          <td>Desafíos físicos como tirolesa, escalada y redes de equilibrio.</td>
+          <td>15-25 min</td>
+          <td>5-10 min</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 class="mt-5 text-center">Mapa del Parque</h3>
+  <div class="text-center my-4">
+    <img src="../img/mapa.jpg" alt="Mapa del Parque Aventura" class="img-fluid" style="max-width: 1000px;">
+  </div>
+</main>
+
+<footer class="text-center py-3">
+  © 2025 Parque Aventura. Todos los derechos reservados. | Diseñado con ♥ para aventureros.
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

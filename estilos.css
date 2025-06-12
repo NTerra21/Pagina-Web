@@ -1,0 +1,137 @@
+/* estilos.css */
+
+/* Generales */
+html, body {
+  height: 100%;                  /* La altura completa del viewport del navegador */
+  margin: 0;                     /* Quita márgenes predeterminados del navegador */
+  font-family: 'Quicksand', sans-serif; /* Define la tipografía principal para toda la página */
+  background-color: #fffce3;     /* Color de fondo general */
+  display: flex;                 /* Usa Flexbox para el layout general */
+  flex-direction: column;        /* Alinea verticalmente los elementos hijos */
+}
+
+main {
+  flex: 1;                       /* Hace que el main ocupe todo el espacio disponible */
+}
+
+/* Encabezado y footer */
+header, footer {
+  background-color: #0d4f36;     /* Fondo verde oscuro para header y footer */
+  color: white;                  /* Texto blanco para mayor contraste */
+}
+
+header h1 {
+  font-family: 'Luckiest Guy', cursive; /* Fuente personalizada para títulos del encabezado */
+  margin-left: 0.5rem;           /* Espaciado leve a la izquierda */
+}
+
+.navbar-brand img {
+  height: 70px;                  /* Altura fija del logo */
+  margin-right: 10px;            /* Espacio a la derecha del logo */
+}
+
+/* Sección Hero */
+.hero-section {
+  position: relative;            /* Para posicionar absolutamente elementos internos */
+  width: 100%;                   /* Ancho completo de la pantalla */
+  height: 100vh;                 /* Altura completa visible de la pantalla */
+  background-image: url('img/ninos-valientes-jugando-en-un-parque-de-aventuras.jpg'); /* Imagen de fondo */
+  background-size: cover;        /* Ajusta la imagen para cubrir toda la sección */
+  background-position: center;   /* Centra la imagen */
+  background-repeat: no-repeat;  /* No repite la imagen */
+}
+
+.hero-section .overlay {
+  position: absolute;            /* Posiciona exactamente encima del fondo */
+  top: 50%; left: 50%;           /* Centrado exacto vertical y horizontalmente */
+  transform: translate(-50%, -50%); /* Corrige la posición del centro */
+  background-color: rgba(253, 213, 93, 0.8); /* Fondo amarillo claro con transparencia */
+  padding: 20px;                 /* Espacio interior del contenedor */
+  border-radius: 10px;           /* Bordes redondeados */
+}
+
+.hero-section h2 {
+  color: #0d4f36;                /* Color verde oscuro para el título */
+  font-size: 2.5rem;             /* Tamaño grande del texto */
+  margin-bottom: 15px;           /* Separación hacia abajo del título */
+}
+
+.hero-section .btn {
+  padding: 10px 20px;            /* Botón con relleno vertical y horizontal cómodo */
+}
+
+.hero-title {
+  font-family: 'Luckiest Guy', cursive; /* Fuente personalizada para el título de la sección hero */
+}
+
+/* Zonas de aventura */
+.zona {
+  height: 120px;                 /* Altura fija para cada zona */
+  display: flex;                 /* Usa flexbox para organizar contenido */
+  flex-direction: column;        /* Contenido en columnas */
+  justify-content: center;       /* Centrado vertical */
+  align-items: center;           /* Centrado horizontal */
+  transition: all 0.3s ease;     /* Transición suave para animaciones */
+}
+
+.zona i {
+  font-size: 2rem;               /* Tamaño grande para iconos de las zonas */
+}
+
+.zona:hover {
+  transform: scale(1.05);        /* Efecto de agrandado al pasar cursor */
+  box-shadow: 0px 4px 15px rgba(0,0,0,0.1); /* Sombra suave al interactuar */
+}
+
+/* Paisaje Footer */
+.paisaje-footer img {
+  display: block;                /* Evita espacio adicional debajo de la imagen */
+  width: 100%;                   /* Imagen ajustada completamente al ancho del contenedor */
+  margin-bottom: -5px;           /* Ajuste pequeño para unir visualmente con footer */
+}
+
+
+/* Avances */
+h2 {
+  color: #0d4f36;                /* Verde oscuro para títulos */
+  margin-top: 2rem;              /* Espacio superior generoso */
+}
+
+.mapa-sitio img {
+  max-width: 100%;               /* Imagen adaptativa al ancho disponible */
+  height: auto;                  /* Mantiene la proporción original de la imagen */
+  margin: 1rem 0;                /* Márgenes arriba y abajo */
+}
+
+
+/* Integrantes */
+.team-section {
+  padding: 4rem 1rem;            /* Espaciado amplio superior/inferior y algo lateral */
+  text-align: center;            /* Centra texto dentro de la sección */
+}
+
+.team-member {
+  background-color: #e6f4ec;     /* Fondo suave y claro */
+  border-radius: 10px;           /* Bordes redondeados */
+  padding: 1.5rem;               /* Espacio interno generoso */
+  margin-bottom: 2rem;           /* Margen inferior para separación entre elementos */
+  display: flex;                 /* Contenido organizado con flexbox */
+  flex-direction: column;        /* Elementos internos alineados verticalmente */
+  align-items: center;           /* Alinea horizontalmente en el centro */
+  gap: 0.75rem;                  /* Separación entre elementos internos */
+  border: 1px solid #d0e3d8;     /* Borde fino para mayor separación visual */
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1); /* Sombra ligera para profundidad visual */
+  height: 100%;                  /* Misma altura para todas las tarjetas */
+  justify-content: center;       /* Centrado vertical dentro de la tarjeta */
+}
+
+.team-member img {
+  width: 200px;                  /* Ancho fijo para fotos de perfil */
+  height: 200px;                 /* Altura fija para fotos de perfil */
+  border-radius: 50%;            /* Imágenes circulares */
+  object-fit: cover;             /* Ajusta imágenes para cubrir el área */
+}
+
+.btn-portafolio {
+  margin-top: 0.5rem;            /* Espacio superior del botón portafolio */
+}

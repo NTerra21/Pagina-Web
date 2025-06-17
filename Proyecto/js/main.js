@@ -33,7 +33,6 @@ document.addEventListener('DOMContentLoaded', function() {
     'Pase Premium': { adult: 44990, child: 32990 }
   };
 
-
   function validateForm() {
     let isValid = true;
 
@@ -164,28 +163,4 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     });
   });
-
-  // Lógica del Interruptor de Modo Oscuro
-  const darkModeToggle = document.getElementById('darkModeToggle');
-  const body = document.body;
-
-  // Verificar preferencia guardada al cargar la página
-  if (localStorage.getItem('darkMode') === 'enabled') {
-    body.classList.add('dark-mode');
-    darkModeToggle.querySelector('.fas').classList.replace('fa-moon', 'fa-sun');
-  } else {
-    darkModeToggle.querySelector('.fas').classList.replace('fa-sun', 'fa-moon');
-  }
-
-  darkModeToggle.addEventListener('click', () => {
-    body.classList.toggle('dark-mode');
-    if (body.classList.contains('dark-mode')) {
-      localStorage.setItem('darkMode', 'enabled');
-      darkModeToggle.querySelector('.fas').classList.replace('fa-moon', 'fa-sun');
-    } else {
-      localStorage.setItem('darkMode', 'disabled');
-      darkModeToggle.querySelector('.fas').classList.replace('fa-sun', 'fa-moon');
-    }
-  });
-
 });

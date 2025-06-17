@@ -1,35 +1,40 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Parque Aventura - Entradas</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Quicksand&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
-  <link rel="stylesheet" href="../estilos.css"/>
-  <link rel="icon" href="../img/logo_parque_aventura_sin_fondo.png" type="image/png"/>
+  <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Quicksand&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../estilos.css">
+  <link rel="icon" href="../img/logo_parque_aventura_sin_fondo.png" type="image/png">
 </head>
 <body>
+
 <header>
   <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #0d4f36;">
     <div class="container">
       <a class="navbar-brand d-flex align-items-center" href="../index.html">
-        <img src="../img/logo_parque_aventura_sin_fondo.png" alt="Logo Parque Aventura" />
+        <img src="../img/logo_parque_aventura_sin_fondo.png" alt="Logo Parque Aventura">
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         <ul class="navbar-nav">
-          <li class="nav-item"><a class="nav-link" href="inicio.html">Inicio</a></li>
-          <li class="nav-item"><a class="nav-link" href="atracciones.html">Atracciones</a></li>
-          <li class="nav-item"><a class="nav-link active" href="entradas.html">Entradas</a></li>
-          <li class="nav-item"><a class="nav-link" href="eventos.html">Eventos</a></li>
-          <li class="nav-item"><a class="nav-link" href="como_llegar.html">Cómo llegar</a></li>
-          <li class="nav-item"><a class="nav-link" href="comunidad.html">Comunidad</a></li>
-          <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+          <li class="nav-item"><a class="nav-link" href="inicio.html" style="font-weight: bold;">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="atracciones.html" style="font-weight: bold;">Atracciones</a></li>
+          <li class="nav-item"><a class="nav-link active" href="entradas.html" style="font-weight: bold;">Entradas</a></li>
+          <li class="nav-item"><a class="nav-link" href="como_llegar.html" style="font-weight: bold;">Cómo llegar</a></li>
+          <li class="nav-item"><a class="nav-link" href="comunidad.html" style="font-weight: bold;">Comunidad</a></li>
+          <li class="nav-item"><a class="nav-link" href="contacto.html" style="font-weight: bold;">Contacto</a></li>
+          <li class="nav-item">
+            <button id="darkModeToggle" class="btn btn-link nav-link" aria-label="Alternar modo oscuro/claro">
+              <i class="fas fa-moon"></i>
+            </button>
+          </li>
         </ul>
       </div>
     </div>
@@ -37,52 +42,8 @@
 </header>
 
 <main class="container py-5">
-  <h2 class="text-center mb-4">Conseguí tus tickets</h2>
-
-  <form class="row g-3 justify-content-center mb-5">
-    <div class="col-md-3">
-      <label for="ticketType" class="form-label">Tipo de Ticket</label>
-      <select class="form-select" id="ticketType" required>
-        <option value="" selected>Elegí tu ticket</option>
-        <option value="1">Pase Básico</option>
-        <option value="2">Pase Full</option>
-        <option value="3">Pase Premium</option>
-      </select>
-    </div>
-    <div class="col-md-3">
-      <label for="eventDate" class="form-label">Fecha</label>
-      <input type="date" class="form-control" id="eventDate" required />
-      <span class="text-danger" id="eventDateError"></span>
-    </div>
-    <div class="col-md-3">
-      <label for="numAdults" class="form-label">Adultos</label>
-      <select class="form-select" id="numAdults" required>
-        <option value="">Cantidad</option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-      </select>
-    </div>
-    <div class="col-md-3">
-      <label for="numChildren" class="form-label">Niños (3-12 años)</label>
-      <select class="form-select" id="numChildren">
-        <option value="">Cantidad</option>
-        <option value="0">0</option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-      </select>
-    </div>
-    <div class="col-12 text-center">
-      <button type="submit" class="btn btn-warning">Comprar</button>
-    </div>
-  </form>
-
-  <h2 class="text-center mb-4">Nuestros Pases</h2>
+  <h2 class="titulo-entradas text-center mb-4">Entradas y Tarifas</h2>
+  <p class="text-center">¡Elegí tu pase y vení a disfrutar una experiencia inolvidable!</p>
 
   <div class="contenedor-pases row">
     <!-- Pase Básico -->
@@ -207,12 +168,90 @@
       </div>
     </div>
   </div>
+
+  <h4 class="mt-5">Horarios</h4>
+  <ul>
+    <li><strong>Lunes a jueves:</strong> 10:00 a 18:00 hs</li>
+    <li><strong>Viernes y sábados:</strong> 10:00 a 22:00 hs</li>
+    <li><strong>Domingos:</strong> 10:00 a 19:00 hs</li>
+    <li><strong>Feriados:</strong> abierto en horario extendido</li>
+  </ul>
+
+  <h5 class="mt-4 text-danger">⚠️ Importante</h5>
+  <ul>
+    <li>Los pases se adquieren en boletería o en línea.</li>
+    <li>No se permite el ingreso con alimentos ni bebidas del exterior.</li>
+  </ul>
 </main>
 
-<footer class="text-center py-3">
-  © 2025 Parque Aventura. Todos los derechos reservados. | Diseñado con ♥ para aventureros.
+<!-- SECCIÓN DE PAISAJE -->
+<div class="paisaje-footer">
+  <img src="img/paisaje-footer2.png" alt="Decoración paisaje" class="w-100">
+</div>
+
+<!-- PIE DE PÁGINA -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-columns">
+      <div class="footer-column">
+        <h3>Integrantes</h3>
+        <ul>
+          <li>Enzo Ruiz: Maquetador / Diseñador Web</li>
+          <li>Bautista Bullejos: Programador</li>
+          <li>Nicolás Terradas: Comunicador Web</li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>Repositorios</h3>
+        <ul>
+          <li><a href="#">Repositorio de Enzo Ruiz</a></li>
+          <li><a href="#">Repositorio de Bautista Bullejos</a></li>
+          <li><a href="#">Repositorio de Nicolás Terradas</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>Leyenda</h3>
+        <ul>
+          <li>Trabajo grupal Obligatorio - Materia Diseño y Desarrollo Web - Grupo 3</li>
+          <li>Nro de curso: 11842</li>
+        </ul>
+      </div>
+      <div class="footer-logo">
+        <img src="img/logo-uade.png" alt="Logo UADE">
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2025 Parque Aventura. Todos los derechos reservados. | Diseñado con ♥ para aventureros.
+    </div>
+  </div>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Lógica del Interruptor de Modo Oscuro
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    const body = document.body;
+
+    // Verificar preferencia guardada al cargar la página
+    if (localStorage.getItem('darkMode') === 'enabled') {
+      body.classList.add('dark-mode');
+      darkModeToggle.querySelector('.fas').classList.replace('fa-moon', 'fa-sun');
+    } else {
+      darkModeToggle.querySelector('.fas').classList.replace('fa-sun', 'fa-moon');
+    }
+
+    darkModeToggle.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+      if (body.classList.contains('dark-mode')) {
+        localStorage.setItem('darkMode', 'enabled');
+        darkModeToggle.querySelector('.fas').classList.replace('fa-moon', 'fa-sun');
+      } else {
+        localStorage.setItem('darkMode', 'disabled');
+        darkModeToggle.querySelector('.fas').classList.replace('fa-sun', 'fa-moon');
+      }
+    });
+  });
+</script>
 </body>
 </html>

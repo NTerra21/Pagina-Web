@@ -1,14 +1,25 @@
-html, body {
+html {
   height: 100%;
+  min-height: 100%;
   margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100%;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
   font-family: 'Quicksand', sans-serif;
   background-color: rgb(255, 250, 230);
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 main {
-  flex: 1;
+  flex: 1 0 auto;
+  width: 100%;
 }
 
 /* Encabezado y footer */
@@ -261,6 +272,8 @@ body.dark-mode .paisaje-footer {
 }
 
 .tarjeta-promocion {
+  position: relative;
+  z-index: 10;
   background-color: white;
   border-radius: 15px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
@@ -349,7 +362,7 @@ body.dark-mode .paisaje-footer {
 }
 
 body.dark-mode .seccion-atracciones {
-  background-color: #121212;
+  background-color: #1a1a1a;
   color: #e0e0e0;
 }
 
@@ -370,9 +383,12 @@ body.dark-mode .seccion-atracciones {
   font-size: 3.5rem;
   text-align: center;
   transform: translateY(-2px);
+  margin-top: 0px;
 }
 
 .tarjeta-atraccion {
+  position: relative;
+  z-index: 10;
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -511,43 +527,86 @@ h2 {
 
 /* Reseñas */
 .titulo-resenas {
-  font-size: 1.8rem;
-  margin-top: 2rem;
-  margin-bottom: 1.5rem;
-  color: #2c3e50;
-  font-weight: 600;
+  color: #0d4f36;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+body.dark-mode .titulo-resenas {
+  color: #ffffff;
 }
 
 .contenedor-resenas {
-  max-width: 1500px;
+  max-width: 1200px;
   margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  margin-top: 25px;
-  margin-bottom: 100px;
-  gap: 1.5rem;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
 }
 
-.resena {
-  background-color: #f8f9fa;
-  padding: 1.25rem 1.5rem;
-  border-left: 5px solid #3498db;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+.tarjeta-resena {
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  border-left: 5px solid #0d4f36;
+}
+
+.tarjeta-resena:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.tarjeta-resena::before {
+  content: '"';
+  font-family: 'Luckiest Guy', cursive;
+  position: absolute;
+  top: 10px;
+  left: 15px;
+  font-size: 4rem;
+  color: rgba(13, 79, 54, 0.1);
+  line-height: 1;
 }
 
 .texto-resena {
-  font-style: italic;
-  font-size: 1.05rem;
-  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
   color: #333;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+  padding-left: 20px;
 }
 
 .autor-resena {
+  font-style: italic;
+  color: #666;
+  margin-top: 10px;
   text-align: right;
-  font-weight: 500;
-  color: #555;
-  margin: 0;
+}
+
+/* Estilos para modo oscuro de las tarjetas de reseñas */
+body.dark-mode .tarjeta-resena {
+  background-color: #2d2d2d;
+  border: 1px solid #444;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .tarjeta-resena:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+body.dark-mode .texto-resena {
+  color: #e0e0e0;
+}
+
+body.dark-mode .autor-resena {
+  color: #a0a0a0;
 }
 
 /* Nuevos estilos para atracciones.html */
@@ -788,59 +847,180 @@ main .container h5.text-danger {
 
 /* Modo Oscuro */
 body.dark-mode {
-  background-color: #121212;
+  background-color: #1a1a1a !important;
   color: #e0e0e0;
 }
 
+body.dark-mode main {
+  background-color: #1a1a1a;
+}
+
+body.dark-mode .paisaje-footer {
+  background-color: #1a1a1a;
+}
+
+body.dark-mode .paisaje-footer img {
+  filter: brightness(0.7);
+}
+
+/* Header en modo oscuro */
 body.dark-mode header {
   background-color: #1a1a1a;
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid #2a2a2a;
+}
+
+body.dark-mode .navbar {
+  background-color: #1a1a1a !important;
+}
+
+body.dark-mode .navbar-brand img {
+  filter: brightness(1.2);
 }
 
 body.dark-mode .navbar-nav .nav-link {
-  color: #e0e0e0;
+  color: #ffffff;
+  font-weight: bold;
 }
 
 body.dark-mode .navbar-nav .nav-link.active,
 body.dark-mode .navbar-nav .nav-link:hover {
   color: #a3e6b2;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
 }
 
+/* Footer en modo oscuro */
 body.dark-mode .site-footer {
   background-color: #1a1a1a;
-  color: #b0b0b0;
-  border-top: 1px solid #333;
+  color: #ffffff;
+  border-top: 1px solid #2a2a2a;
 }
 
-body.dark-mode .site-footer a {
+body.dark-mode .footer-columns {
+  background-color: #1a1a1a;
+}
+
+body.dark-mode .footer-column h3 {
+  color: #ffffff;
+  border-bottom: 2px solid #2a2a2a;
+}
+
+body.dark-mode .footer-column ul li {
+  color: #e0e0e0;
+}
+
+body.dark-mode .footer-column ul li a {
+  color: #ffffff;
+}
+
+body.dark-mode .footer-column ul li a:hover {
   color: #a3e6b2;
 }
 
-body.dark-mode .seccion-hero .overlay {
-  background-color: rgba(0, 0, 0, 0.7);
+body.dark-mode .footer-logo img {
+  filter: brightness(1.2);
 }
 
+body.dark-mode .footer-bottom {
+  background-color: #1a1a1a;
+  color: #ffffff;
+  border-top: 1px solid #2a2a2a;
+}
+
+/* Panel de compra en modo oscuro */
 body.dark-mode .contenedor-formulario-entradas {
-  background-color: #282828;
-  border: 1px solid #333;
+  background-color: #2a2a2a;
+  border: 1px solid #3a3a3a;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
 }
 
-body.dark-mode .contenedor-formulario-entradas .form-label,
-body.dark-mode .contenedor-formulario-entradas .form-control-lg,
-body.dark-mode .contenedor-formulario-entradas .form-select-lg {
-  color: #e0e0e0;
-  border-bottom-color: #555;
+body.dark-mode .contenedor-formulario-entradas .form-label {
+  color: #ffffff;
 }
 
-body.dark-mode .seccion-hero .btn {
-  background-color: #0d4f36;
-  color: white;
+body.dark-mode .contenedor-formulario-entradas .form-control,
+body.dark-mode .contenedor-formulario-entradas .form-select {
+  background-color: #1a1a1a;
+  border: 1px solid #3a3a3a;
+  color: #ffffff;
+}
+
+body.dark-mode .contenedor-formulario-entradas .form-control:focus,
+body.dark-mode .contenedor-formulario-entradas .form-select:focus {
+  background-color: #1a1a1a;
   border-color: #0d4f36;
+  color: #ffffff;
+  box-shadow: 0 0 0 0.25rem rgba(13, 79, 54, 0.25);
+}
+
+body.dark-mode .contenedor-formulario-entradas .btn-primary {
+  background-color: #0d4f36;
+  border-color: #0d4f36;
+  color: #ffffff;
+}
+
+body.dark-mode .contenedor-formulario-entradas .btn-primary:hover {
+  background-color: #a3e6b2;
+  border-color: #a3e6b2;
+  color: #0d4f36;
+}
+
+body.dark-mode .contenedor-formulario-entradas .form-text {
+  color: #b0b0b0;
+}
+
+body.dark-mode .contenedor-formulario-entradas .invalid-feedback {
+  color: #ff6b6b;
+}
+
+body.dark-mode .contenedor-formulario-entradas .valid-feedback {
+  color: #a3e6b2;
+}
+
+/* Modal de confirmación en modo oscuro */
+body.dark-mode .modal-content {
+  background-color: #2a2a2a;
+  border: 1px solid #3a3a3a;
+}
+
+body.dark-mode .modal-header {
+  border-bottom: 1px solid #3a3a3a;
+}
+
+body.dark-mode .modal-footer {
+  border-top: 1px solid #3a3a3a;
+}
+
+body.dark-mode .modal-title {
+  color: #ffffff;
+}
+
+body.dark-mode .modal-body {
+  color: #e0e0e0;
+}
+
+body.dark-mode .modal-body strong {
+  color: #a3e6b2;
+}
+
+body.dark-mode .modal .btn-close {
+  filter: invert(1) grayscale(100%) brightness(200%);
+}
+
+/* Ajustes adicionales para el modo oscuro */
+body.dark-mode .seccion-hero .overlay {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+body.dark-mode .seccion-hero h2,
+body.dark-mode .seccion-hero p {
+  color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 body.dark-mode .encabezado-promociones,
 body.dark-mode .encabezado-atracciones {
-  background-color: #333;
+  background-color: #1a1a1a;
 }
 
 body.dark-mode .titulo-promociones,
@@ -850,9 +1030,10 @@ body.dark-mode .titulo-atracciones {
 
 body.dark-mode .tarjeta-promocion,
 body.dark-mode .tarjeta-atraccion {
-  background-color: #282828;
+  background-color: #2a2a2a;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-  color: #e0e0e0;
+  color: #ffffff;
+  border: 1px solid #3a3a3a;
 }
 
 body.dark-mode .encabezado-promocion,
@@ -862,11 +1043,11 @@ body.dark-mode .nombre-atraccion {
 
 body.dark-mode .info-promocion p,
 body.dark-mode .info-atraccion p {
-  color: #b0b0b0;
+  color: #e0e0e0;
 }
 
 body.dark-mode .nota-promo {
-  color: #999;
+  color: #b0b0b0;
 }
 
 body.dark-mode .info-atraccion h4,
@@ -889,10 +1070,936 @@ body.dark-mode #darkModeToggle .fas {
 }
 
 body.dark-mode .seccion-promociones {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('Proyecto/img/pexels-stasknop-1170790.jpg');
+  background-color: #1a1a1a;
 }
 
 body.dark-mode .text-center {
-  background-color: #121212;
+  background-color: transparent;
+}
+
+body.dark-mode .tarjeta-detalles-atraccion {
+  background-color: #2a2a2a;
+  border: 1px solid #3a3a3a;
+  color: #e0e0e0;
+}
+
+body.dark-mode .tarjeta-pase {
+  background-color: #2a2a2a;
+  border: 1px solid #3a3a3a;
+  color: #e0e0e0;
+}
+
+body.dark-mode .tarjeta-pase .titulo-pase {
+  color: #f7931e;
+}
+
+body.dark-mode .tarjeta-pase h4 {
+  color: #a3e6b2;
+}
+
+body.dark-mode .tarjeta-pase ul li {
+  color: #e0e0e0;
+}
+
+body.dark-mode .tarjeta-pase ul li strong {
+  color: #f7931e;
+}
+
+body.dark-mode .tarjeta-pase .precio-pase {
+  border-top-color: #3a3a3a;
+}
+
+body.dark-mode .tarjeta-pase .precio-pase p {
+  color: #e0e0e0;
+}
+
+body.dark-mode .tarjeta-pase .precio-pase span {
+  color: #f7931e;
+}
+
+body.dark-mode .tarjeta-pase.featured {
+  border-color: #f7931e;
+  box-shadow: 0 6px 12px rgba(247, 147, 30, 0.2);
+}
+
+body.dark-mode .tarjeta-pase.premium {
+  border-color: #0d4f36;
+  box-shadow: 0 6px 12px rgba(13, 79, 54, 0.2);
+}
+
+body.dark-mode main .container p {
+  color: #e0e0e0;
+}
+
+body.dark-mode main .container h4,
+body.dark-mode main .container h5 {
+  color: #a3e6b2;
+}
+
+body.dark-mode main .container ul li {
+  color: #e0e0e0;
+}
+
+body.dark-mode main .container h5.text-danger {
+  color: #ff6b6b !important;
+}
+
+/* Tarjetas de promociones en modo oscuro */
+body.dark-mode .tarjeta-promocion {
+  background-color: #2a2a2a;
+  border: 1px solid #3a3a3a;
+}
+
+body.dark-mode .tarjeta-promocion .card-title {
+  color: #ffffff;
+  font-weight: bold;
+}
+
+body.dark-mode .tarjeta-promocion .card-text {
+  color: #e0e0e0;
+}
+
+/* Estilos para las muestras de fuentes */
+.font-sample-luckiest {
+  font-family: 'Luckiest Guy', cursive;
+  font-size: 1.2rem;
+}
+
+.font-sample-quicksand {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1.2rem;
+}
+
+/* Estilos para los íconos de zonas */
+.zone-icon {
+  text-align: center;
+}
+
+.zone-icon i {
+  font-size: 2rem;
+}
+
+.zone-icon .fa-mountain {
+  color: #f76c1e;
+}
+
+.zone-icon .fa-water {
+  color: #93d1fb;
+}
+
+/* Estilos para la paleta de colores */
+.color-sample {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #ccc;
+  margin-right: 10px;
+}
+
+.color-sample.verde-oscuro {
+  background-color: #0d4f36;
+}
+
+.color-sample.amarillo {
+  background-color: #fdd55d;
+}
+
+.color-sample.naranja {
+  background-color: #f76c1e;
+}
+
+.color-sample.celeste {
+  background-color: #70c3ff;
+}
+
+/* Estilos para el navbar */
+.navbar {
+  background-color: #0d4f36;
+}
+
+.navbar-nav .nav-link {
+  font-weight: bold;
+}
+
+/* Estilos para el botón de tickets */
+#submitTicketsBtn {
+  background-color: #fdd55d;
+  border-color: #fdd55d;
+}
+
+/* Estilos para la sección de promociones */
+.seccion-promociones {
+  position: relative;
+}
+
+.seccion-promociones .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8));
+}
+
+.encabezado-promociones {
+  position: relative;
+  z-index: 1;
+  padding: 1rem 0;
+}
+
+.titulo-promociones {
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+  font-weight: bold;
+}
+
+/* Estilos para las tarjetas de promociones */
+.encabezado-promocion {
+  color: #000000;
+}
+
+/* Estilos para la sección de atracciones */
+.atracciones-destacadas {
+  position: relative;
+  background-image: url('Proyecto/img/pexels-cenali-2532568.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 4rem 0;
+  padding-top: 0px;
+}
+
+.atracciones-destacadas .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8));
+  z-index: 1;
+}
+
+.encabezado-atracciones {
+  position: relative;
+  z-index: 1;
+  padding: 1rem 0;
+}
+
+.titulo-atracciones {
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+  font-weight: bold;
+}
+
+/* Estilos para las tarjetas de atracciones */
+.tarjeta-atraccion {
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.nombre-atraccion {
+  color: #000000;
+}
+
+/* Estilos para el botón de ver todas las atracciones */
+.btn-dark {
+  background-color: #70c3ff;
+  border-color: #70c3ff;
+  color: #0d4f36;
+}
+
+/* Estilos específicos para atracciones en modo oscuro */
+body.dark-mode .tarjeta-detalles-atraccion {
+  background-color: #2a2a2a;
+  border: 1px solid #3a3a3a;
+  color: #e0e0e0;
+}
+
+body.dark-mode .nombre-detalles-atraccion {
+  color: #f7931e;
+}
+
+body.dark-mode .tarjeta-detalles-atraccion p {
+  color: #e0e0e0;
+}
+
+body.dark-mode .tarjeta-detalles-atraccion h5 {
+  color: #a3e6b2;
+}
+
+body.dark-mode .tarjeta-detalles-atraccion ul li {
+  color: #e0e0e0;
+}
+
+body.dark-mode .tarjeta-detalles-atraccion ul li strong {
+  color: #f7931e;
+}
+
+body.dark-mode .altura-minima {
+  color: #f7931e;
+}
+
+body.dark-mode .titulo-principal-atracciones {
+  color: #a3e6b2;
+}
+
+body.dark-mode .texto-intro-atracciones {
+  color: #e0e0e0;
+}
+
+body.dark-mode .titulo-categoria {
+  color: #f7931e;
+  border-bottom-color: #f7931e;
+}
+
+/* Estilos para el título de entradas y tarifas */
+.titulo-entradas {
+  font-family: 'Luckiest Guy', cursive;
+  color: #0d4f36;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+body.dark-mode .titulo-entradas {
+  color: #a3e6b2;
+}
+
+/* Estilos para el título de cómo llegar */
+.titulo-como-llegar {
+  font-family: 'Luckiest Guy', cursive;
+  color: #0d4f36;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+body.dark-mode .titulo-como-llegar {
+  color: #a3e6b2;
+}
+
+/* Estilos para el mapa en modo oscuro */
+body.dark-mode iframe {
+  filter: brightness(0.8) contrast(1.2);
+}
+
+body.dark-mode .btn-success {
+  background-color: #0d4f36;
+  border-color: #0d4f36;
+}
+
+body.dark-mode .btn-success:hover {
+  background-color: #a3e6b2;
+  border-color: #a3e6b2;
+  color: #0d4f36;
+}
+
+/* Estilos para la sección de actividades */
+.seccion-actividades {
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 30px;
+  margin: 40px 0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.titulo-actividades {
+  font-family: 'Luckiest Guy', cursive;
+  color: #0d4f36;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.lista-actividades {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.item-actividad {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  margin-bottom: 15px;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.item-actividad:hover {
+  transform: translateX(10px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.icono-actividad {
+  font-size: 2rem;
+  margin-right: 20px;
+  color: #0d4f36;
+  width: 50px;
+  text-align: center;
+}
+
+.contenido-actividad {
+  flex: 1;
+}
+
+.titulo-item {
+  font-weight: 600;
+  color: #0d4f36;
+  margin-bottom: 5px;
+  font-size: 1.2rem;
+}
+
+.descripcion-item {
+  color: #666;
+  margin: 0;
+}
+
+/* Estilos para modo oscuro */
+body.dark-mode .seccion-actividades {
+  background-color: #2a2a2a;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .titulo-actividades {
+  color: #a3e6b2;
+}
+
+body.dark-mode .item-actividad {
+  background-color: #1a1a1a;
+}
+
+body.dark-mode .icono-actividad {
+  color: #a3e6b2;
+}
+
+body.dark-mode .titulo-item {
+  color: #a3e6b2;
+}
+
+body.dark-mode .descripcion-item {
+  color: #e0e0e0;
+}
+
+/* Estilos para el título principal de comunidad */
+.titulo-comunidad {
+  font-family: 'Luckiest Guy', cursive;
+  color: #0d4f36;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+body.dark-mode .titulo-comunidad {
+  color: #a3e6b2;
+}
+
+/* Estilos para redes sociales */
+.seccion-redes {
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 30px;
+  margin: 40px 0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.titulo-redes {
+  font-family: 'Luckiest Guy', cursive;
+  color: #0d4f36;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+}
+
+.contenedor-redes {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.icono-red-social {
+  font-size: 2.5rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: #f8f9fa;
+}
+
+.icono-red-social:hover {
+  transform: translateY(-5px);
+}
+
+.icono-red-social.facebook {
+  color: #1877f2;
+}
+
+.icono-red-social.instagram {
+  color: #e4405f;
+}
+
+.icono-red-social.twitter {
+  color: #1da1f2;
+}
+
+.icono-red-social.youtube {
+  color: #ff0000;
+}
+
+/* Estilos para Club Aventura */
+.seccion-club {
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 30px;
+  margin: 40px 0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.titulo-club {
+  font-family: 'Luckiest Guy', cursive;
+  color: #0d4f36;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.lista-beneficios {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.item-beneficio {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  margin-bottom: 15px;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.item-beneficio:hover {
+  transform: translateX(10px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.icono-beneficio {
+  font-size: 1.5rem;
+  margin-right: 20px;
+  color: #0d4f36;
+  width: 40px;
+  text-align: center;
+}
+
+.texto-beneficio {
+  font-size: 1.1rem;
+  color: #333;
+  margin: 0;
+}
+
+/* Estilos para modo oscuro */
+body.dark-mode .seccion-redes,
+body.dark-mode .seccion-club {
+  background-color: #2a2a2a;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .titulo-redes,
+body.dark-mode .titulo-club {
+  color: #a3e6b2;
+}
+
+body.dark-mode .icono-red-social {
+  background-color: #1a1a1a;
+}
+
+body.dark-mode .item-beneficio {
+  background-color: #1a1a1a;
+}
+
+body.dark-mode .icono-beneficio {
+  color: #a3e6b2;
+}
+
+body.dark-mode .texto-beneficio {
+  color: #e0e0e0;
+}
+
+/* Estilos para la página de contacto */
+.seccion-contacto {
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 40px;
+  margin: 40px 0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.titulo-contacto {
+  font-family: 'Luckiest Guy', cursive;
+  color: #0d4f36;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.subtitulo-contacto {
+  color: #666;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.formulario-contacto .form-control {
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 12px;
+  transition: all 0.3s ease;
+}
+
+.formulario-contacto .form-control:focus {
+  border-color: #0d4f36;
+  box-shadow: 0 0 0 0.2rem rgba(13, 79, 54, 0.25);
+}
+
+.formulario-contacto .form-label {
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.btn-enviar {
+  background-color: #0d4f36;
+  color: white;
+  padding: 12px 30px;
+  border-radius: 25px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.btn-enviar:hover {
+  background-color: #0a3d2a;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.seccion-medios-contacto {
+  background-color: #f8f9fa;
+  border-radius: 15px;
+  padding: 30px;
+  margin-top: 40px;
+}
+
+.titulo-medios {
+  font-family: 'Luckiest Guy', cursive;
+  color: #0d4f36;
+  font-size: 2rem;
+  margin-bottom: 25px;
+}
+
+.lista-medios {
+  list-style: none;
+  padding: 0;
+}
+
+.item-medio {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: white;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.item-medio:hover {
+  transform: translateX(10px);
+}
+
+.icono-medio {
+  font-size: 1.5rem;
+  color: #0d4f36;
+  margin-right: 20px;
+  width: 40px;
+  text-align: center;
+}
+
+.texto-medio {
+  margin: 0;
+  color: #333;
+}
+
+.texto-medio strong {
+  color: #0d4f36;
+}
+
+/* Estilos para modo oscuro */
+body.dark-mode .seccion-contacto,
+body.dark-mode .seccion-medios-contacto {
+  background-color: #2a2a2a;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .titulo-contacto,
+body.dark-mode .titulo-medios {
+  color: #a3e6b2;
+}
+
+body.dark-mode .subtitulo-contacto {
+  color: #b0b0b0;
+}
+
+body.dark-mode .formulario-contacto .form-control {
+  background-color: #1a1a1a;
+  border-color: #333;
+  color: #e0e0e0;
+}
+
+body.dark-mode .formulario-contacto .form-label {
+  color: #e0e0e0;
+}
+
+body.dark-mode .item-medio {
+  background-color: #1a1a1a;
+}
+
+body.dark-mode .icono-medio {
+  color: #a3e6b2;
+}
+
+body.dark-mode .texto-medio {
+  color: #e0e0e0;
+}
+
+body.dark-mode .texto-medio strong {
+  color: #a3e6b2;
+}
+
+/* Estilos para la sección Trabajá con nosotros */
+.seccion-trabajo {
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 40px;
+  margin: 40px 0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.titulo-trabajo {
+  font-family: 'Luckiest Guy', cursive;
+  color: #0d4f36;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.subtitulo-trabajo {
+  color: #666;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.contenedor-beneficios {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.beneficio-item {
+  background-color: #f8f9fa;
+  border-radius: 15px;
+  padding: 25px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.beneficio-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.icono-beneficio {
+  font-size: 2.5rem;
+  color: #0d4f36;
+  margin-bottom: 15px;
+}
+
+.titulo-beneficio {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.descripcion-beneficio {
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.btn-aplicar {
+  background-color: #0d4f36;
+  color: white;
+  padding: 12px 30px;
+  border-radius: 25px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-aplicar:hover {
+  background-color: #0a3d2a;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  color: white;
+}
+
+/* Estilos para modo oscuro */
+body.dark-mode .seccion-trabajo {
+  background-color: #2a2a2a;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .titulo-trabajo {
+  color: #a3e6b2;
+}
+
+body.dark-mode .subtitulo-trabajo {
+  color: #b0b0b0;
+}
+
+body.dark-mode .beneficio-item {
+  background-color: #1a1a1a;
+}
+
+body.dark-mode .icono-beneficio {
+  color: #a3e6b2;
+}
+
+body.dark-mode .titulo-beneficio {
+  color: #e0e0e0;
+}
+
+body.dark-mode .descripcion-beneficio {
+  color: #b0b0b0;
+}
+
+/* Estilos para el modal de CV */
+.modal-cv {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  overflow-y: auto;
+}
+
+.modal-cv.active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contenido-modal {
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 30px;
+  width: 90%;
+  max-width: 600px;
+  position: relative;
+  margin: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.cerrar-modal {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 1.5rem;
+  color: #666;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.cerrar-modal:hover {
+  color: #0d4f36;
+}
+
+.titulo-modal {
+  font-family: 'Luckiest Guy', cursive;
+  color: #0d4f36;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.formulario-cv .form-control {
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 12px;
+  margin-bottom: 15px;
+  transition: all 0.3s ease;
+}
+
+.formulario-cv .form-control:focus {
+  border-color: #0d4f36;
+  box-shadow: 0 0 0 0.2rem rgba(13, 79, 54, 0.25);
+}
+
+.formulario-cv .form-label {
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.formulario-cv .btn-submit {
+  background-color: #0d4f36;
+  color: white;
+  padding: 12px 30px;
+  border-radius: 25px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: none;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.formulario-cv .btn-submit:hover {
+  background-color: #0a3d2a;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para modo oscuro */
+body.dark-mode .contenido-modal {
+  background-color: #2a2a2a;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+body.dark-mode .titulo-modal {
+  color: #a3e6b2;
+}
+
+body.dark-mode .cerrar-modal {
+  color: #b0b0b0;
+}
+
+body.dark-mode .cerrar-modal:hover {
+  color: #a3e6b2;
+}
+
+body.dark-mode .formulario-cv .form-control {
+  background-color: #1a1a1a;
+  border-color: #333;
+  color: #e0e0e0;
+}
+
+body.dark-mode .formulario-cv .form-label {
+  color: #e0e0e0;
 }
 
